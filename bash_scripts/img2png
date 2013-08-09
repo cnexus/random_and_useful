@@ -7,9 +7,8 @@ then
 fi
 
 INPUT=$1
-BASE=$(basename $1)
-FILENOEXT=${BASE%.*}
+FILENOEXT=${INPUT%.*}
 
-SIZE=$(identify $INPUT | cut -f 3)
-
-ffmpeg -f rawvideo -pix_fmt rgb565 -s $SIZE -i $INPUT -f image2 $FILENOEXT.png
+SIZE=$(nbsize -f $INPUT)
+echo "Resolution: $SIZE"
+command=$(ffmpeg -loglevel panic -f rawvideo -pix_fmt rgb565 -s $SIZE -i $INPUT -f image2 $FILENOEXT.png)
