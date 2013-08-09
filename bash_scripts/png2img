@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$1" == "" ]
+then
+    echo "Usage: $0 <splashfile>.png"
+    exit
+fi
+
+INPUT=$1
+BASE=$(basename $1)
+FILENOEXT=${BASE%.*}
+
+ffmpeg -i $INPUT -f rawvideo -pix_fmt rgb565 $FILENOEXT.img
