@@ -1,0 +1,9 @@
+#!/bin/bash
+
+INPUT=$1
+BASE=$(basename $1)
+FILENOEXT=${BASE%.*}
+
+SIZE=$(identify $INPUT | cut -f 3)
+
+ffmpeg -f rawvideo -pix_fmt rgb565 -s $SIZE -i $INPUT -f image2 $FILENOEXT.png
