@@ -2,12 +2,17 @@
 
 if [ "$1" == "" ]
 then
-    echo "Usage: $0 <splashfile>.png"
+    echo "Usage: $0 <splashfile>.png [outfile]"
     exit
 fi
 
 INPUT=$1
-BASE=$(basename $1)
-FILENOEXT=${BASE%.*}
+FILENOEXT=${INPUT%.*}
 
-ffmpeg -i $INPUT -f rawvideo -pix_fmt rgb565 $FILENOEXT.img
+if [ ! "$2" == "" ]
+then
+   TEMP=$2
+   FILENOEXT=${TEMP%.*}
+fi
+
+ffmpeg -loglevel panic -i $INPUT -f rawvideo -pix_fmt rgb565 $FILENOEXT.img
