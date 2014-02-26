@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
    <manifest>
      <remote name="cmg" fetch="https://github.com/CyanogenMod/" />
-     <project path="device/samsung/d2spr" name="android_device_samsung_d2spr" remote="cmg" revision="cm-10.2"/>
-     <project path="device/samsung/d2-common" name="android_device_samsung_d2-common" remote="cmg" revision="cm-10.2"/>
+     <project path="device/samsung/d2spr" name="android_device_samsung_d2spr" remote="cmg" revision="cm-11.0"/>
+     <project path="device/samsung/d2-common" name="android_device_samsung_d2-common" remote="cmg" revision="cm-11.0"/>
      <project path="kernel/samsung/d2" name="android_kernel_samsung_d2" remote="cmg" revision="cm-10.2"/>
-     <project path="device/samsung/qcom-common" name="android_device_samsung_qcom-common" remote="cmg" revision="cm-10.2"/>
+     <project path="device/samsung/qcom-common" name="android_device_samsung_qcom-common" remote="cmg" revision="cm-11.0"/>
 
      <remote name="mp" fetch="https://github.com/TheMuppets/" />
-     <project path="vendor/samsung" name="proprietary_vendor_samsung" remote="mp" revision="cm-10.2"/>
-     <project path="device/samsung/msm8960-common" name="android_device_samsung_msm8960-common" remote="cmg" revision="cm-10.2" />
+     <project path="vendor/samsung" name="proprietary_vendor_samsung" remote="mp" revision="cm-11.0"/>
+     <project path="device/samsung/msm8960-common" name="android_device_samsung_msm8960-common" remote="cmg" revision="cm-11.0" />
    </manifest>
